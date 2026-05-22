@@ -60,7 +60,7 @@ class Program
                 string filename = Console.ReadLine();
                 myJournal.SaveToFile(filename);
             }
-
+// As a proof of creativity, when the user pick the choice 4, his created file is saved to the SQLite Database 
 
             else if (choice == 4)
              {
@@ -74,7 +74,7 @@ class Program
 
               }
 
-
+// Still as a proof of creativity , when the user picks the choice 6 , his file saved file is loaded from the database.
             else if (choice == 6)
                 {
                     myJournal.LoadFromDatabase();

@@ -25,8 +25,8 @@ public class Journal
 
    public void SaveToFile (string file)
     {
-        string filename = "myEntry";
-        using (StreamWriter outputFile = new StreamWriter(filename))
+        
+        using (StreamWriter outputFile = new StreamWriter(file))
         {
             foreach(Entry newEntry in _entries)
             {
@@ -37,13 +37,13 @@ public class Journal
     }
     public void LoadFromFile (string file)
     {
-        string filename = "myEntry";
-        string [] lines = System.IO.File.ReadAllLines(filename);
-        Entry loadedEntry = new Entry();
+        _entries.Clear();
+        string [] lines = System.IO.File.ReadAllLines(file);
+        
 
         foreach (string line in lines)
         {
-            
+            Entry loadedEntry = new Entry();
             string [] parts = line.Split(',');
             if (parts.Length >= 3)
             {
@@ -68,10 +68,10 @@ public class Journal
                 Console.WriteLine("Invalid format line in file");
             }
         }
-
+        DisplayAll();
     }
 
-
+// As a proof of creativity,I created a SQLite Database to Save and Load the file
     public void CreateDatabase ()
     {
         string connectionString =  "Data Source = journal.db";
@@ -102,7 +102,7 @@ public class Journal
        Console.WriteLine("Database created successfully!");
 
     }
-
+// Here the user can save his file to the SQLite Database
     public void SaveToDatabase()
     {
       string connectionString = "Data Source = journal.db";
@@ -138,7 +138,7 @@ public class Journal
     }
 
 
-
+// Still as a proof of creativity, the user can load his file from the SQLite Database
     public void LoadFromDatabase()
 {
     _entries.Clear();
