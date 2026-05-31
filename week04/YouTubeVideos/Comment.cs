@@ -6,23 +6,23 @@ using System.IO;
 public class Comment
 {
     
-    private string _personName;
-    private string _text;
+     private string _personName;
+     private string _text;
 
     public Comment (string personName,string text)
     {
-        _personName = personName;
-        _text = text;
+         _personName = personName;
+         _text = text;
     }
 
     public string GetPersonName ()
     {
-        return _personName;
+         return _personName;
     }
 
     public string GetComment()
     {
-        return _text;
+         return _text;
     }
 
 

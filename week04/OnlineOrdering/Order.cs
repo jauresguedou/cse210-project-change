@@ -14,8 +14,8 @@ public class Order
 
     public Order (List<Product> products, Customer customer)
     {
-        _customer = customer;
-        _products = products;
+         _customer = customer;
+         _products = products;
     }
 
     public string GetPackingLabel()
@@ -24,7 +24,7 @@ public class Order
 
         foreach (Product product in _products)
         {
-           packingLabel += $"\n{product.GetProductId()}:{product.GetProductName()}";
+             packingLabel += $"\n{product.GetProductId()}:{product.GetProductName()}";
         }
 
         return packingLabel;
@@ -32,7 +32,7 @@ public class Order
 
     public string GetShippingLabel()
     {
-        return $"{_customer.GetCustomerName()}\n{_customer.GetCustomerAddress().GetFullAddress()}";
+         return $"{_customer.GetCustomerName()}\n{_customer.GetCustomerAddress().GetFullAddress()}";
     }
 
     public double GetTotalPrice()
@@ -41,16 +41,16 @@ public class Order
         int shippingCost;
         foreach (Product product in _products)
         {
-               totalPrice += product.GetTotalCost(); 
+             totalPrice += product.GetTotalCost(); 
         }
 
         if(_customer.LiveInUSA())
         {
-            shippingCost = 5;
+             shippingCost = 5;
         }
         else
         {
-            shippingCost = 35;
+             shippingCost = 35;
         }
         return totalPrice + shippingCost;
     }

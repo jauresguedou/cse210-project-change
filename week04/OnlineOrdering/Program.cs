@@ -45,13 +45,13 @@ class Program
 
        foreach (Order  order in orders)
        {
-        Console.WriteLine(" ");
-        Console.WriteLine("ORDER");
-        Console.WriteLine($"{order.GetPackingLabel()}"); 
-        Console.WriteLine("");    ;
-        Console.WriteLine($"{order.GetShippingLabel()}")    ;
-        Console.WriteLine($"${order.GetTotalPrice()}") ;
-        
+            Console.WriteLine(" ");
+            Console.WriteLine("ORDER");
+            Console.WriteLine($"{order.GetPackingLabel()}"); 
+            Console.WriteLine("");    ;
+            Console.WriteLine($"{order.GetShippingLabel()}")    ;
+            Console.WriteLine($"${order.GetTotalPrice()}") ;
+            
        }
 
        

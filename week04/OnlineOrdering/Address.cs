@@ -14,27 +14,27 @@ public class Address
 
     public Address(string streetAddress, string city, string country, string state)
     {
-        _streetAddress = streetAddress;
-        _city = city;
-        _country = country;
-        _state = state;
+            _streetAddress = streetAddress;
+            _city = city;
+            _country = country;
+            _state = state;
     }
 
     public string GetFullAddress()
     {
-        return $"{_streetAddress},\n{_city},{_state},\n{_country}";
+         return $"{_streetAddress},\n{_city},{_state},\n{_country}";
     }
 
     public bool LiveInUsa()
     {
         if (_country == "usa"|| _country == "USA" || _country == "Usa")
         {
-            return true;
+             return true;
         }
 
         else
         {
-            return false;
+             return false;
         }
     }
 
