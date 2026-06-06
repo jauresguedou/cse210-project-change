@@ -8,7 +8,7 @@ public class BreathingActivity : Activity
     public BreathingActivity()
     {
         _name = "Breathing";
-        _description = "This activity will help you relax by walking you through breathing in and out slowly" +"Clear your mind and focus on your breathing";
+        _description = "This activity will help you relax by walking you through breathing in and out slowly \nclear your mind and focus on your breathing";
 
        
        
@@ -18,26 +18,25 @@ public class BreathingActivity : Activity
     {
         DisplayStartMessage();
         Console.Clear();
-        Console.WriteLine(" You may begin in:");
 
         DateTime endTime = DateTime.Now.AddSeconds(_duration);
 
         while (DateTime.Now < endTime)
         {
-            Console.WriteLine("Breath in ...");
+            Console.WriteLine("Breathe in ...");
             ShowCountDown(5);
+            Console.WriteLine("Now breathe out...");
+            Console.WriteLine();
 
             if (DateTime.Now >= endTime)
             {
                 break;
             }
             
-
-
-            Console.WriteLine("Breath out...");
-            ShowCountDown(5);
         }
-       DisplayEndMessage(); 
+        
+        DisplayEndMessage(); 
+        ShowCountDown(5);
 
     }
 }

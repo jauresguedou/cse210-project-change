@@ -9,16 +9,15 @@ public class ListingActivity : Activity
     private int _count;
 
     private List<string> _prompts = new List<string> ();
-    List <string> responses = new List<string>();
     public ListingActivity ()
     {
         _name = "Listing";
-        _description ="This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing";
-        _prompts.Add("Who are people that you appreciate?");
-        _prompts.Add("What are personal strengths of yours?");
-        _prompts.Add("Who are people that you have helped this week?");
-        _prompts.Add("When have you felt the Holy Ghost this month?");
-        _prompts.Add("Who are some of your personal heroes?");
+        _description ="This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
+        _prompts.Add("---Who are people that you appreciate?---");
+        _prompts.Add("---What are personal strengths of yours?---");
+        _prompts.Add("---Who are people that you have helped this week?---");
+        _prompts.Add("---When have you felt the Holy Ghost this month?---");
+        _prompts.Add("---Who are some of your personal heroes?---");
 
 
     }
@@ -43,13 +42,14 @@ public class ListingActivity : Activity
 
     public List<string> GetListFromUser()
     {
-
+       
+       List <string> responses = new List<string>();
        DateTime endTime1 = DateTime.Now.AddSeconds(_duration);
 
         while (DateTime.Now < endTime1)
         {
-            Console.WriteLine(">");
-            string response = Console.ReadLine();
+            Console.Write("> ");
+            string response = Console.ReadLine() ?? "";
             responses.Add(response);
             
         }
@@ -67,7 +67,6 @@ public class ListingActivity : Activity
 
         
         DisplayStartMessage();
-        Console.Clear();
         Console.WriteLine();
 
         string prompt = GetRandomPrompts();
@@ -76,14 +75,15 @@ public class ListingActivity : Activity
 
         Console.WriteLine("You may begin in:...");
         ShowCountDown(5);
+        Console.Clear();
         
 
         List <string> answers = GetListFromUser();
 
         _count = answers.Count();
         Console.WriteLine($"You listed {_count}");
-
         DisplayEndMessage();
+        
 
         
     }
