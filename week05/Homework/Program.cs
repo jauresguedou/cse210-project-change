@@ -18,6 +18,7 @@ class Program
         string   Homework = mathAssignment.GetHomeworkList();
 
         string   summary2 = writingAssignment.GetSummary();
+        
         string   Homework2 = writingAssignment.GetWritingInformation();
         Console.WriteLine(summary);
         Console.WriteLine();
