@@ -19,10 +19,7 @@ public class Activity
         _duration = 0;
     }
 
-    public string GetName()
-    {
-        return _name;
-    }
+    
 
   
 
@@ -94,5 +91,8 @@ public class Activity
         
         
     }
+
+
+
     
 }
